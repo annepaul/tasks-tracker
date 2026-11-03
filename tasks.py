@@ -31,7 +31,7 @@ def mark_done(task_id):
     tasks=load_tasks()
     for t in tasks:
         if t["id"]==task_id:
-            t["done"]=True
+            t["done"] = True
             save_tasks(tasks)
             print(f"Marked task {task_id} as done")
             return
