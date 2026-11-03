@@ -26,3 +26,22 @@ def list_tasks():
     for t in tasks:
         mark = "[x]" if t["done"] else "[ ]"
         print(f"{t['id']}. {mark} {t['title']}")
+
+def mark_done(task_id):
+    tasks=load_tasks()
+    for t in tasks:
+        if t["id"]==task_id:
+            t["done"]=True
+            save_tasks(tasks)
+            print(f"Marked task {task_id} as done")
+            return
+    print(f"No task with id {task_id}")
+
+def delete_task(task_id):
+    tasks = load_tasks()
+    remaining = [t for t in tasks if t["id"] != task_id]
+    if len(remaining) == len(tasks):
+        print(f"No task with id {task_id}")
+        return
+    save_tasks(remaining)
+    print(f"Deleted task {task_id}")
