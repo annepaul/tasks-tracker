@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-FILE = Path("tasks.json")
+FILE = Path.home() / ".tasks.json"
 
 def load_tasks():
     if not FILE.exists():

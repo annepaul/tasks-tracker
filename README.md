@@ -8,6 +8,7 @@ to a local JSON file, so they persist between sessions.
 - we can add, list, complete and delete tasks
 - Data is stored in a plain JSON file
 - Tested with pytest
+- Your tasks file will be present in your home folder
 
 ## Installation
 
@@ -16,7 +17,7 @@ git clone https://github.com/annepaul/tasks-tracker.git
 cd YOUR-REPO
 python -m venv venv
 source venv/bin/activate    # Windows (Git Bash): source venv/Scripts/activate
-pip install pytest
+pip install .
 ```
 
 ## Usage
